@@ -49,6 +49,9 @@ app.get("/api/wx_openid", async (req, res) => {
   }
 });
 
+// 微信服务号消息回调
+app.use('/api/wx-callback', require('./routes/wx_callback'));
+
 const port = process.env.PORT || 80;
 
 async function bootstrap() {
